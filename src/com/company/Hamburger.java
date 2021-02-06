@@ -2,7 +2,7 @@ package com.company;
 
 // TODO - Set "Additions" as class and correlating pricing as getters
 
-class DeluxeHamburger extends Hamburger{
+class DeluxeHamburger extends Hamburger {
     private String fries;
     private String drink;
 
@@ -11,6 +11,7 @@ class DeluxeHamburger extends Hamburger{
         this.fries = fries;
         this.drink = drink;
     }
+
     double deluxePrice = 9.99;
 
     public void showPricing() {
@@ -31,6 +32,7 @@ class HealthyBurger extends Hamburger {
         this.sesame = sesame;
 
     }
+
     double rucolaPrice = 0.79;
     double sesamePrice = 0.79;
     double healthyTotal = total + rucolaPrice + sesamePrice;
@@ -38,20 +40,20 @@ class HealthyBurger extends Hamburger {
 
     public void showPricing() {
         String output = "Healthy Burger Base price = " + basePrice + " $" + "\n" + "Lettuce = " + lettucePrice + " $" +
-                "\n" + "Cheese = " + cheesePrice + " $" + "\n" + "Pickles = "  + picklesPrice + " $" + "\n" +
+                "\n" + "Cheese = " + cheesePrice + " $" + "\n" + "Pickles = " + picklesPrice + " $" + "\n" +
                 "Tomatoes = " + tomatoesPrice + " $" + "\n" + "Rucola = " + " $" + rucolaPrice + "\n" + "Sesame = "
                 + sesamePrice + "\n" + "Total Price = " + healthyTotal + " $";
         System.out.println(output);
     }
 
     public void calculatePrice(boolean lettuce, boolean cheese, boolean pickles, boolean tomatoes, boolean rucola,
-                                 boolean sesame) {
+                               boolean sesame) {
         super.calculatePrice(lettuce, cheese, pickles, tomatoes);
 
-        if(rucola){
+        if (rucola) {
             orderedAdditions += rucolaPrice;
         }
-        if(sesame){
+        if (sesame) {
             orderedAdditions += sesamePrice;
         }
         System.out.println(this.basePrice + orderedAdditions);
@@ -73,6 +75,7 @@ public class Hamburger {
 
 
     }
+
     double basePrice = 4.49;
     double lettucePrice = 0.19;
     double cheesePrice = 0.49;
@@ -93,15 +96,15 @@ public class Hamburger {
         if (pickles) {
             orderedAdditions += picklesPrice;
         }
-        if (tomatoes){
+        if (tomatoes) {
             orderedAdditions += tomatoesPrice;
         }
         System.out.println(basePrice + orderedAdditions);
     }
 
-    public void showPricing (){
+    public void showPricing() {
         String output = "Hamburger Base price = " + basePrice + " $" + "\n" + "Lettuce = " + lettucePrice + " $" +
-                "\n" + "Cheese = " + cheesePrice + " $" + "\n" + "Pickles = "  + picklesPrice + " $" + "\n" +
+                "\n" + "Cheese = " + cheesePrice + " $" + "\n" + "Pickles = " + picklesPrice + " $" + "\n" +
                 "Tomatoes = " + tomatoesPrice + " $" + "\n" + "Total Price = " + total + " $";
         System.out.println(output);
     }
