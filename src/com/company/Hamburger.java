@@ -37,7 +37,6 @@ class HealthyBurger extends Hamburger {
     double sesamePrice = 0.79;
     double healthyTotal = total + rucolaPrice + sesamePrice;
 
-
     public void showPricing() {
         String output = "Healthy Burger Base price = " + basePrice + " $" + "\n" + "Lettuce = " + lettucePrice + " $" +
                 "\n" + "Cheese = " + cheesePrice + " $" + "\n" + "Pickles = " + picklesPrice + " $" + "\n" +
@@ -72,8 +71,6 @@ public class Hamburger {
     public Hamburger(String breadRollType, String meatType) {
         this.breadRollType = "Wheat";
         this.meatType = "Beef";
-
-
     }
 
     double basePrice = 4.49;
@@ -85,7 +82,6 @@ public class Hamburger {
     double orderedAdditions = 0;
 
     public void calculatePrice(boolean lettuce, boolean cheese, boolean pickles, boolean tomatoes) {
-
 
         if (lettuce) {
             orderedAdditions += lettucePrice;
