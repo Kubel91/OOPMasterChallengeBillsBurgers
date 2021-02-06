@@ -7,6 +7,7 @@ public class Main {
         HealthyBurger healthyburger = new HealthyBurger("Rye", "Chicken", true, true);
         DeluxeHamburger deluxeHamburger = new DeluxeHamburger("Wheat", "Beef", "Fries",
                 "Coke");
+
         hamburger.showPricing();
         healthyburger.showPricing();
         healthyburger.calculatePrice(true, true, true, true, true, true);
