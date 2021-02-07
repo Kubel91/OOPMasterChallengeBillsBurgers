@@ -1,112 +1,67 @@
 package com.company;
 
-// TODO - Set "Additions" as class and correlating pricing as getters
-
-class DeluxeHamburger extends Hamburger {
-    private String fries;
-    private String drink;
-
-    public DeluxeHamburger(String breadRollType, String meatType, String fries, String drink) {
-        super(breadRollType, meatType);
-        this.fries = fries;
-        this.drink = drink;
-    }
-
-    double deluxePrice = 9.99;
-
-    public void showPricing() {
-        String output = "Deluxe Hamburger price with drink and fries = " + deluxePrice + " $";
-        System.out.println(output);
-    }
-}
-
-class HealthyBurger extends Hamburger {
-    private boolean rucola;
-    private boolean sesame;
-    private double basePrice;
-
-    public HealthyBurger(String breadRollType, String meatType, boolean rucola, boolean sesame) {
-        super(breadRollType, meatType);
-        this.basePrice = 4.99;
-        this.rucola = rucola;
-        this.sesame = sesame;
-
-    }
-
-    double rucolaPrice = 0.79;
-    double sesamePrice = 0.79;
-    double healthyTotal = total + rucolaPrice + sesamePrice;
-
-    public void showPricing() {
-        String output = "Healthy Burger Base price = " + basePrice + " $" + "\n" + "Lettuce = " + lettucePrice + " $" +
-                "\n" + "Cheese = " + cheesePrice + " $" + "\n" + "Pickles = " + picklesPrice + " $" + "\n" +
-                "Tomatoes = " + tomatoesPrice + " $" + "\n" + "Rucola = " + " $" + rucolaPrice + "\n" + "Sesame = "
-                + sesamePrice + "\n" + "Total Price = " + healthyTotal + " $";
-        System.out.println(output);
-    }
-
-    public void calculatePrice(boolean lettuce, boolean cheese, boolean pickles, boolean tomatoes, boolean rucola,
-                               boolean sesame) {
-        super.calculatePrice(lettuce, cheese, pickles, tomatoes);
-
-        if (rucola) {
-            orderedAdditions += rucolaPrice;
-        }
-        if (sesame) {
-            orderedAdditions += sesamePrice;
-        }
-        System.out.println(this.basePrice + orderedAdditions);
-    }
-}
-
 public class Hamburger {
 
+    private String name;
+    private String meat;
+    private double price;
     private String breadRollType;
-    private String meatType;
-    private boolean lettuce;
-    private boolean cheese;
-    private boolean pickles;
-    private boolean tomatoes;
 
-    public Hamburger(String breadRollType, String meatType) {
-        this.breadRollType = "Wheat";
-        this.meatType = "Beef";
+    private String addition1Name;
+    private double addition1Price;
+
+    private String addition2Name;
+    private double addition2Price;
+
+    private String addition3Name;
+    private double addition3Price;
+
+    private String addition4Name;
+    private double addition4Price;
+
+    public Hamburger(String name, String meat, double price, String breadRollType) {
+        this.name = name;
+        this.meat = meat;
+        this.price = price;
+        this.breadRollType = breadRollType;
+        System.out.println(name + " hamburger on a " + breadRollType + " roll with " + meat + " is " + price);
     }
 
-    double basePrice = 4.49;
-    double lettucePrice = 0.19;
-    double cheesePrice = 0.49;
-    double picklesPrice = 0.39;
-    double tomatoesPrice = 0.39;
-    double total = basePrice + lettucePrice + cheesePrice + picklesPrice + tomatoesPrice;
-    double orderedAdditions = 0;
 
-    public void calculatePrice(boolean lettuce, boolean cheese, boolean pickles, boolean tomatoes) {
-
-        if (lettuce) {
-            orderedAdditions += lettucePrice;
-        }
-        if (cheese) {
-            orderedAdditions += cheesePrice;
-        }
-        if (pickles) {
-            orderedAdditions += picklesPrice;
-        }
-        if (tomatoes) {
-            orderedAdditions += tomatoesPrice;
-        }
-        System.out.println(basePrice + orderedAdditions);
+    public void addHamburgerAddition1(String addition1Name,double addition1Price){
+        name = addition1Name;
+        price += addition1Price;
+        System.out.println("Added " + addition1Name + " for an extra " + addition1Price);
     }
 
-    public void showPricing() {
-        String output = "Hamburger Base price = " + basePrice + " $" + "\n" + "Lettuce = " + lettucePrice + " $" +
-                "\n" + "Cheese = " + cheesePrice + " $" + "\n" + "Pickles = " + picklesPrice + " $" + "\n" +
-                "Tomatoes = " + tomatoesPrice + " $" + "\n" + "Total Price = " + total + " $";
-        System.out.println(output);
+    public void addHamburgerAddition2(String addition2Name,double addition2Price){
+        name = addition2Name;
+        price += addition2Price;
+        System.out.println("Added " + addition2Name + " for an extra " + addition2Price);
     }
+
+    public void addHamburgerAddition3(String addition3Name,double addition3Price){
+        name = addition3Name;
+        price += addition3Price;
+        System.out.println("Added " + addition3Name + " for an extra " + addition3Price);
+    }
+
+    public void addHamburgerAddition4(String addition4Name,double addition4Price){
+        name = addition4Name;
+        price += addition4Price;
+        System.out.println("Added " + addition4Name + " for an extra " + addition4Price);
+    }
+
+    public double itemizeHamburger(){
+        return price + addition1Price + addition2Price + addition3Price + addition4Price;
+    }
+
+
+
+
+
+
+
+
+
 }
-
-
-
-
-
